@@ -1,0 +1,41 @@
+#!/sbin/sh
+# nano: set up and run nano from recovery/terminal
+# osm0sis @ xda-developers
+
+mount /data 2>/dev/null;
+mount /cache 2>/dev/null;
+suimg=$(ls /data/su.img || ls /cache/su.img || ls /data/magisk.img || ls /cache/magisk.img) 2>/dev/null;
+mnt=/$(basename $suimg .img);
+if [ "$suimg" ]; then
+  umount $mnt 2>/dev/null;
+  test ! -e $mnt && mkdir $mnt;
+  mount -t ext4 -o rw,noatime $suimg $mnt 2>/dev/null;
+  for i in 0 1 2 3 4 5 6 7; do
+    case `mount` in
+      *" $mnt "*) break;;
+    esac;
+    loop=/dev/block/loop$i;
+    mknod $loop b 7 $i 2>/dev/null;
+    losetup $loop $suimg 2>/dev/null;
+    mount -t ext4 -o loop $loop $mnt 2>/dev/null;
+  done;
+  test $mnt == /magisk && magisk=/nano-ndk/system;
+  etc=$mnt$magisk/etc;
+  bin=$mnt$magisk/bin;
+else
+  mount -o ro /system 2>/dev/null;
+  test -f /system/system/build.prop && root=/system;
+  etc=$root/system/etc;
+  bin=$root/system/xbin;
+fi;
+
+if [ "$1" == "--term" ]; then
+  term=$2;
+  shift 2;
+else
+  term=pcansi;
+fi;
+
+clear;
+TERMINFO=$etc/terminfo TERM=$term $bin/nano.bin "$@";
+

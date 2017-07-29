@@ -1,0 +1,123 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: surH1Bs4hR30JclyYkFBB7d7164=
+
+Name: etc/terminfo/s/sun
+SHA1-Digest: +vaxsz1sOmquMfe2V4ELYXHZGo0=
+
+Name: etc/terminfo/m/mach-bold
+SHA1-Digest: sx5oJ01+ZYw9IDAsEPOo3uLUWmo=
+
+Name: etc/terminfo/r/rxvt-basic
+SHA1-Digest: PqHRQNHQZh6ttNkKEs24zGVLmh0=
+
+Name: etc/terminfo/w/wsvt25m
+SHA1-Digest: Yn6vaer+VfiJP1O3/CBNDKmwoBY=
+
+Name: etc/terminfo/x/xterm-xfree86
+SHA1-Digest: b4yODW40vlVKsH4QyqhLEMejMjA=
+
+Name: etc/terminfo/x/xterm-256color
+SHA1-Digest: YciJS6fTWcnLlpOxWnnax5PGY4E=
+
+Name: etc/terminfo/s/screen-256color
+SHA1-Digest: 0K8gJUBZDucmCYxjjvVQvGAvo0g=
+
+Name: etc/terminfo/x/xterm
+SHA1-Digest: 3or/p7LVhUrQRG3mYmIVfoOwnNQ=
+
+Name: bin/nano.bin
+SHA1-Digest: CkW3JQjbaBLwOHhyD9OukFCtCSw=
+
+Name: etc/terminfo/E/Eterm
+SHA1-Digest: wVu4RlNs4Q6gQ8NjBz9XHLpjJtk=
+
+Name: etc/terminfo/l/linux
+SHA1-Digest: gLeNkvLCzJGuZn9/2HZmlTHHTtw=
+
+Name: etc/terminfo/m/mach-color
+SHA1-Digest: UZ34Q6jSfKNrsXA8PtyJMTV5PdE=
+
+Name: etc/terminfo/r/rxvt
+SHA1-Digest: Id7jwsHM8cI6Ku6bnR/5GNo3o8U=
+
+Name: etc/terminfo/v/vt52
+SHA1-Digest: tFWmT2KJut4jJrV4OPj+zCoPbHM=
+
+Name: etc/terminfo/c/cons25
+SHA1-Digest: uf4Uz18JA4GuQGN9AsNzSyj90/8=
+
+Name: etc/terminfo/v/vt102
+SHA1-Digest: pF6Rbk4UbvNY+kWbYcHyAQFCdsk=
+
+Name: etc/terminfo/a/ansi
+SHA1-Digest: tSEa5MINaemROxdcNkXFzpeDfOM=
+
+Name: etc/terminfo/s/screen
+SHA1-Digest: EaKNf760jHdkm7b0OV+t0gCivps=
+
+Name: etc/terminfo/v/vt100
+SHA1-Digest: nukA8EsJ4oNm5KKbVaHjwDzrK2Y=
+
+Name: etc/terminfo/c/cygwin
+SHA1-Digest: A86Hz4BJvk2sXdnuGaoX8CKseUc=
+
+Name: etc/terminfo/x/xterm-vt220
+SHA1-Digest: ikwrMew0Cg1TNQNMpjSKvtF+++8=
+
+Name: etc/terminfo/h/hurd
+SHA1-Digest: AV2obq1K7YR2WN/BsqWDNJ1eZjI=
+
+Name: etc/terminfo/s/screen-s
+SHA1-Digest: eU29QHRaVEiJtsvPmD+PoZYisro=
+
+Name: bin/nano
+SHA1-Digest: LZYYhmU/dt1Elo20nQUckaF4wfw=
+
+Name: etc/terminfo/s/screen-w
+SHA1-Digest: peDGh4U0ToxbkQGUKwxpktv+Tf4=
+
+Name: etc/terminfo/x/xterm-r5
+SHA1-Digest: jLrK5AK2rz4d1i7w0qpeiiwxujQ=
+
+Name: etc/terminfo/x/xterm-r6
+SHA1-Digest: gUDN78HxPJFwl+YrbNsOUB5URHs=
+
+Name: etc/terminfo/s/screen-bce
+SHA1-Digest: AB5ojG8gbRFvUxAPNd3OURgGkqA=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: /FN8udHVvFDn2TJhF2fRa5oWsBY=
+
+Name: etc/terminfo/w/wsvt25
+SHA1-Digest: SXRFAmy2kJJnMoEcRFAyR9MdqM8=
+
+Name: etc/terminfo/p/pcansi
+SHA1-Digest: aGeslqDP7R2d8emmTxIsdcrHGpk=
+
+Name: etc/terminfo/E/Eterm-color
+SHA1-Digest: wVu4RlNs4Q6gQ8NjBz9XHLpjJtk=
+
+Name: etc/terminfo/d/dumb
+SHA1-Digest: 30tNj6QTfoVRDdsEyEzHsL/FGPY=
+
+Name: etc/terminfo/s/screen-256color-bce
+SHA1-Digest: /Js1BWXtWPgwbK+FGlO42KbZxQI=
+
+Name: etc/terminfo/m/mach
+SHA1-Digest: IWTrxjibLrgfhVr/gd1RKpwO9Yk=
+
+Name: etc/terminfo/v/vt220
+SHA1-Digest: dlwn0JbjwycnBYrySOpEQ6x41SM=
+
+Name: module.prop
+SHA1-Digest: P4FtI6Hxl2fBLHWyXQyKpZTrU2c=
+
+Name: sbin/nano
+SHA1-Digest: QN44PD5tXQgZD+ZC4EQZks66JVQ=
+
+Name: etc/terminfo/x/xterm-color
+SHA1-Digest: euLbxlELQb1Uiqy99z/NG3eUNcI=
+
