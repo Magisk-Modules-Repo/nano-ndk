@@ -79,6 +79,7 @@ find "$etc/terminfo" -type f -exec chmod 644 {} +;
 if [ "$magisk" ]; then
   cp -f module.prop $mnt/$modname/;
   touch $mnt/$modname/auto_mount;
+  chcon -hR 'u:object_r:system_file:s0' "$mnt/$modname";
   if $BOOTMODE; then
     mkdir -p /magisk/$modname;
     touch /magisk/$modname/update;
