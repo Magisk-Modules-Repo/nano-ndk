@@ -12,6 +12,6 @@ else
 fi;
 
 clear;
-resize;
+resize >/dev/null;
 TERMINFO=$dir/../etc/terminfo TERM=$term $dir/nano.bin "$@";
 
