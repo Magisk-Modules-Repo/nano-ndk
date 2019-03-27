@@ -5,7 +5,7 @@
 mount /data 2>/dev/null;
 mount /cache 2>/dev/null;
 test -e /data/adb/magisk && adb=adb;
-suimg=$( (ls /data/su.img || ls /cache/su.img || ls /data/$adb/magisk.img || ls /cache/magisk.img) 2>/dev/null);
+suimg=`(ls /data/su.img || ls /cache/su.img || ls /data/$adb/magisk.img || ls /cache/magisk.img) 2>/dev/null`;
 mnt=/$(basename $suimg .img);
 if [ "$suimg" ]; then
   umount $mnt 2>/dev/null;
