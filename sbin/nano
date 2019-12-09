@@ -23,14 +23,10 @@ if [ "$suimg" ]; then
 else
   mnt=$(dirname `find /data -name supersu_is_here | head -n1`);
   test -e /data/adb/modules && mnt=/data/adb/modules/nano-ndk/system;
+  test -e /data/adb/modules_update && mnt=/data/adb/modules_update/nano-ndk/system;
   if [ -e "$mnt" ]; then
     etc=$mnt/etc;
     bin=$mnt/bin;
-  elif [ -e "/data/adb/modules" ]; then
-    mnt=/data/adb/modules;
-    magisk=/nano-ndk/system;
-    etc=$mnt$magisk/etc;
-    bin=$mnt$magisk/bin;
   else
     mount -o ro /system 2>/dev/null;
     test -f /system/system/build.prop && root=/system;
