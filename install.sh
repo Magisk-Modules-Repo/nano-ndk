@@ -56,7 +56,7 @@ if [ "$suimg" ]; then
     test "$(mount | grep " $mnt ")" && break;
     loop=/dev/block/loop$i;
     if [ ! -f "$loop" -o ! -b "$loop" ]; then
-      mknod $loop b 7 $i;
+      mknod $loop b 7 $((i * 8));
     fi;
     losetup $loop $suimg && mount -t ext4 -o loop,noatime $loop $mnt;
   done;
