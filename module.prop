@@ -1,7 +1,7 @@
 id=nano-ndk
 name=Nano for Android NDK
-version=4.8
-versionCode=4800
+version=4.9
+versionCode=4900
 author=osm0sis @ xda-developers
 description=Static ARM nano binary for Android built with the NDK
 support=https://forum.xda-developers.com/showthread.php?t=2239421

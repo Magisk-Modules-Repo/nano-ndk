@@ -47,20 +47,26 @@ if [ -e /data/$adb/magisk -a ! -e /data/$adb/magisk.img -a ! -e /data/adb/module
 fi;
 
 suimg=`(ls /data/$adb/magisk_merge.img || ls /data/su.img || ls /cache/su.img || ls /data/$adb/magisk.img || ls /cache/magisk.img) 2>/dev/null`;
-mnt=$devtmp/$(basename $suimg .img);
 if [ "$suimg" ]; then
+  mnt=$devtmp/$(basename $suimg .img);
   umount $mnt;
   test ! -e $mnt && mkdir -p $mnt;
   mount -t ext4 -o rw,noatime $suimg $mnt;
-  for i in 0 1 2 3 4 5 6 7; do
-    test "$(mount | grep " $mnt ")" && break;
-    loop=/dev/block/loop$i;
-    if [ ! -f "$loop" -o ! -b "$loop" ]; then
-      test -e /dev/block/loop1 && minorx=$(ls -l /dev/block/loop1 | cut -d, -f2 | cut -c4) || minorx=1;
-      mknod $loop b 7 $((i * minorx));
+  if [ $? != 0 ]; then
+    test -e /dev/block/loop1 && minorx=$(ls -l /dev/block/loop1 | cut -d, -f2 | cut -c4) || minorx=1;
+    i=0;
+    while [ $i -lt 16 ]; do
+      loop=/dev/block/loop$i;
+      if [ ! -b $loop ]; then
+        mknod $loop b 7 $((i * minorx));
+      fi;
+      losetup $loop $suimg 2>/dev/null && break;
+    done;
+    mount -t ext4 -o loop,noatime $loop $mnt 2>/dev/null;
+    if [ $? != 0 ]; then
+      losetup -d $loop 2>/dev/null;
     fi;
-    losetup $loop $suimg && mount -t ext4 -o loop,noatime $loop $mnt;
-  done;
+  fi;
   case $mnt in
     */magisk*) magisk=/$modname/system;;
   esac;
