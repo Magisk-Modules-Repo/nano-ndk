@@ -61,6 +61,7 @@ if [ "$suimg" ]; then
         mknod $loop b 7 $((i * minorx));
       fi;
       losetup $loop $suimg 2>/dev/null && break;
+      i=$((i + 1));
     done;
     mount -t ext4 -o loop,noatime $loop $mnt 2>/dev/null;
     if [ $? != 0 ]; then
