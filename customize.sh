@@ -6,7 +6,7 @@ SKIPUNZIP=1
 
 # make sure variables are correct regardless of Magisk or recovery sourcing the script
 [ -z $OUTFD ] && OUTFD=/proc/self/fd/$2 || OUTFD=/proc/self/fd/$OUTFD;
-[ ! -z $ZIP ] && { ZIPFILE="$ZIP"; unset ZIP; }
+[ -n $ZIP ] && { ZIPFILE="$ZIP"; unset ZIP; }
 [ -z $ZIPFILE ] && ZIPFILE="$3";
 DIR=$(dirname "$ZIPFILE");
 
