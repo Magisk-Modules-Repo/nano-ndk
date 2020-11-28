@@ -12,7 +12,8 @@ if [ "$suimg" ]; then
   test ! -e $mnt && mkdir -p $mnt;
   mount -t ext4 -o rw,noatime $suimg $mnt 2>/dev/null;
   if [ $? != 0 ]; then
-    test -e /dev/block/loop1 && minorx=$(ls -l /dev/block/loop1 | cut -d, -f2 | cut -c4) || minorx=1;
+    minorx=1;
+    test -e /dev/block/loop1 && minorx=$(ls -l /dev/block/loop1 | cut -d, -f2 | cut -c4);
     i=0;
     while [ $i -lt 16 ]; do
       loop=/dev/block/loop$i;
