@@ -6,7 +6,7 @@
 * [GitHub](https://github.com/Magisk-Modules-Repo/nano-Installer)
 * [Support](https://forum.xda-developers.com/showthread.php?t=2239421)
 * [Sponsor](https://github.com/sponsors/osm0sis)
-* [Donate](https://forum.xda-developers.com/donatetome.php?u=4544860)
+* [Donate](https://www.paypal.me/osm0sis)
 
 ### Description
 A simple installer to push my own static Android ARM build of the nano editor binary to /system/xbin/ along with the required files in /system/etc/terminfo/, and a wrapper with optional --term parameter to choose your terminfo profile. Detects and supports "systemless" install via SuperSU/Magisk as well. It can then be used from Terminal while booted from that point on.
