@@ -2,18 +2,18 @@
 # nano: set up and run nano from recovery/terminal
 # osm0sis @ xda-developers
 
-mount /data 2>/dev/null;
-mount /cache 2>/dev/null;
-test -e /data/adb/magisk && adb=adb;
+(mount /data;
+mount /cache) 2>/dev/null;
+[ -e /data/adb/magisk ] && adb=adb;
 suimg=`(ls /data/su.img || ls /cache/su.img || ls /data/$adb/magisk.img || ls /cache/magisk.img) 2>/dev/null`;
 if [ "$suimg" ]; then
   mnt=/$(basename $suimg .img);
   umount $mnt 2>/dev/null;
-  test ! -e $mnt && mkdir -p $mnt;
+  [ ! -e $mnt ] && mkdir -p $mnt;
   mount -t ext4 -o rw,noatime $suimg $mnt 2>/dev/null;
   if [ $? != 0 ]; then
     minorx=1;
-    test -e /dev/block/loop1 && minorx=$(ls -l /dev/block/loop1 | cut -d, -f2 | cut -c4);
+    [ -e /dev/block/loop1 ] && minorx=$(ls -l /dev/block/loop1 | cut -d, -f2 | cut -c4);
     i=0;
     while [ $i -lt 16 ]; do
       loop=/dev/block/loop$i;
@@ -28,19 +28,19 @@ if [ "$suimg" ]; then
       losetup -d $loop 2>/dev/null;
     fi;
   fi;
-  test $mnt == /magisk && magisk=/nano-ndk/system;
+  [ $mnt == /magisk ] && magisk=/nano-ndk/system;
   etc=$mnt$magisk/etc;
   bin=$mnt$magisk/bin;
 else
   mnt=$(dirname `find /data -name supersu_is_here | head -n1`);
-  test -e /data/adb/modules && mnt=/data/adb/modules/nano-ndk/system;
-  test -e /data/adb/modules_update && mnt=/data/adb/modules_update/nano-ndk/system;
+  [ -e /data/adb/modules ] && mnt=/data/adb/modules/nano-ndk/system;
+  [ -e /data/adb/modules_update ] && mnt=/data/adb/modules_update/nano-ndk/system;
   if [ -e "$mnt" ]; then
     etc=$mnt/etc;
     bin=$mnt/bin;
   else
     mount -o ro /system 2>/dev/null;
-    test -f /system/system/build.prop && root=/system;
+    [ -f /system/system/build.prop ] && root=/system;
     etc=$root/system/etc;
     bin=$root/system/xbin;
   fi;
