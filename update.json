@@ -1,6 +1,6 @@
 {
-    "version": "6.2",
-    "versionCode": "6200",
-    "zipUrl": "https://forum.xda-developers.com/attachments/update-nano-terminal-editor-v6-2-signed-zip.5572015/",
+    "version": "6.3",
+    "versionCode": "6300",
+    "zipUrl": "https://forum.xda-developers.com/attachments/update-nano-terminal-editor-v6-3-signed-zip.5602415/",
     "changelog": "https://raw.githubusercontent.com/Magisk-Modules-Repo/nano-ndk/master/README.md"
 }
