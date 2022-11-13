@@ -16,7 +16,10 @@ custom_zip_opts() {
 }
 
 custom_target() {
-  return # stub
+  # use /product/bin/nano if /system_ext/bin/nano exists to remain higher in $PATH
+  if [ -e /system/system_ext/bin/nano ]; then
+    TARGET=$TARGET/product;
+  fi;
 }
 
 custom_install() {

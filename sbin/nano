@@ -29,6 +29,7 @@ if [ "$suimg" ]; then
     fi;
   fi;
   [ $mnt == /magisk ] && magisk=/nano-ndk/system;
+  [ -e $magisk/product ] && magisk=/nano-ndk/system/product;
   etc=$mnt$magisk/etc;
   bin=$mnt$magisk/bin;
 else
@@ -36,13 +37,17 @@ else
   [ -e /data/adb/modules ] && mnt=/data/adb/modules/nano-ndk/system;
   [ -e /data/adb/modules_update ] && mnt=/data/adb/modules_update/nano-ndk/system;
   if [ -e "$mnt" ]; then
+    [ -e $mnt/product ] && mnt=$mnt/product;
     etc=$mnt/etc;
     bin=$mnt/bin;
   else
     mount -o ro /system 2>/dev/null;
-    [ -f /system/system/build.prop ] && root=/system;
-    etc=$root/system/etc;
-    bin=$root/system/xbin;
+    mount -o ro /product 2>/dev/null;
+    system=/system;
+    [ -f /system/system/build.prop ] && system=/system/system;
+    [ -e $system/product/bin/nano ] && system=$system/product;
+    etc=$system/etc;
+    bin=$system/xbin;
   fi;
 fi;
 
