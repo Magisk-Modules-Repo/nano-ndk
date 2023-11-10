@@ -24,9 +24,16 @@ custom_target() {
 
 custom_install() {
   ui_print " ";
-  ui_print "Installing nano to $BIN ...";
+  set_perm 0 0 755 $BIN/nano $BIN/nano.bin-arm $BIN/nano.bin-arm64;
+  if $BIN/nano.bin-arm64 --version >/dev/null; then
+    ui_print "Installing nano (arm64) to $BIN ...";
+    mv -f $BIN/nano.bin-arm64 $BIN/nano.bin;
+  else
+    ui_print "Installing nano (arm) to $BIN ...";
+    mv -f $BIN/nano.bin-arm $BIN/nano.bin;
+  fi;
+  rm -f $BIN/nano.bin-arm*;
   ui_print "Installing terminfo to $ETC ...";
-  set_perm 0 0 755 $BIN/nano $BIN/nano.bin;
   if ! $BOOTMODE; then
     ui_print "Installing nano recovery script to /sbin ...";
     cp -rf sbin/* /sbin;
