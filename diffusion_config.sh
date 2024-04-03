@@ -25,7 +25,7 @@ custom_target() {
 custom_install() {
   ui_print " ";
   set_perm 0 0 755 $BIN/nano $BIN/nano.bin-arm $BIN/nano.bin-arm64;
-  if $BIN/nano.bin-arm64 --version >/dev/null; then
+  if $BIN/nano.bin-arm64 --version >/dev/null 2>&1; then
     ui_print "Installing nano (arm64) to $BIN ...";
     mv -f $BIN/nano.bin-arm64 $BIN/nano.bin;
   else
