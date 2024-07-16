@@ -1,7 +1,7 @@
 id=nano-ndk
 name=Nano for Android NDK
-version=8.0
-versionCode=8000
+version=8.1
+versionCode=8100
 author=osm0sis @ xda-developers
 description=Static arm/arm64 nano binary for Android built with the NDK
 updateJson=https://raw.githubusercontent.com/Magisk-Modules-Repo/nano-ndk/master/update.json

@@ -1,6 +1,6 @@
 {
-    "version": "8.0",
-    "versionCode": "8000",
-    "zipUrl": "https://xdaforums.com/attachments/update-nano-terminal-editor-v8-0-signed-zip.6098911/",
+    "version": "8.1",
+    "versionCode": "8100",
+    "zipUrl": "https://xdaforums.com/attachments/update-nano-terminal-editor-v8-1-signed-zip.6124098/",
     "changelog": "https://raw.githubusercontent.com/Magisk-Modules-Repo/nano-ndk/master/README.md"
 }
