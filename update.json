@@ -1,6 +1,6 @@
 {
     "version": "9.1",
     "versionCode": "9100",
-    "zipUrl": "https://xdaforums.com/attachments/update-nano-terminal-editor-v9-1-signed-zip.6358458/",
+    "zipUrl": "https://github.com/Magisk-Modules-Repo/nano-ndk/releases/download/9100/UPDATE-nano.Terminal.Editor.v9.1-signed.zip",
     "changelog": "https://raw.githubusercontent.com/Magisk-Modules-Repo/nano-ndk/master/README.md"
 }
